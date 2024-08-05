@@ -62,7 +62,7 @@ for (let iCh = 0; iCh < 4; iCh++) {
     const gauge = lc
         .Gauge({
             container: gaugeContainer,
-            theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,,
+            theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
         })
         .setTitle('')
         .setUnitLabel(`Channel ${iCh + 1}`)
