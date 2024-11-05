@@ -67,8 +67,8 @@ Direct developer email support can be purchased through a [Support Plan][4] or b
 © LightningChart Ltd 2009-2022. All rights reserved.
 
 
-[Gauge Chart]: https://lightningchart.com/js-charts/api-documentation/v6.0.0/classes/GaugeChart.html
-[XY Chart]: https://lightningchart.com/js-charts/api-documentation/v6.0.0/classes/ChartXY.html
-[Line Series]: https://lightningchart.com/js-charts/api-documentation/v6.0.0/classes/LineSeries.html
-[Axis]: https://lightningchart.com/js-charts/api-documentation/v6.0.0/classes/Axis.html
+[Gauge Chart]: https://lightningchart.com/js-charts/api-documentation/v6.1.0/classes/GaugeChart.html
+[XY Chart]: https://lightningchart.com/js-charts/api-documentation/v6.1.0/classes/ChartXY.html
+[Line Series]: https://lightningchart.com/js-charts/api-documentation/v6.1.0/classes/LineSeries.html
+[Axis]: https://lightningchart.com/js-charts/api-documentation/v6.1.0/classes/Axis.html
 
