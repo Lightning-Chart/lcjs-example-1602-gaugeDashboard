@@ -48,7 +48,7 @@ xyChart.getDefaultAxisY().dispose()
 for (let iCh = 0; iCh < 4; iCh++) {
     const axisY = xyChart
         .addAxisY({ iStack: 4 - iCh })
-        .setMargins(10, 10)
+        .setMargins(5, 5)
         .setInterval({ start: 0, end: 100 })
     const lineSeries = xyChart
         .addPointLineAreaSeries({ axisY, dataPattern: 'ProgressiveX' })
