@@ -30,6 +30,7 @@ const lineSeriesArray = []
 // Create XY chart for line series
 const xyChart = lc
     .ChartXY({
+        legend: { visible: false },
         container: xyContainer,
         theme: Themes[new URLSearchParams(window.location.search).get('theme') || 'darkGold'] || undefined,
     })
@@ -40,7 +41,7 @@ xyChart
     .setTickStrategy(AxisTickStrategies.Empty)
     .setThickness(0)
     .setStrokeStyle(emptyLine)
-    .setScrollStrategy(AxisScrollStrategies.progressive)
+    .setScrollStrategy(AxisScrollStrategies.scrolling)
     .setInterval({ start: 0, end: 10_000, stopAxisAfter: false })
 xyChart.getDefaultAxisY().dispose()
 
@@ -50,10 +51,7 @@ for (let iCh = 0; iCh < 4; iCh++) {
         .addAxisY({ iStack: 4 - iCh })
         .setMargins(5, 5)
         .setInterval({ start: 0, end: 100 })
-    const lineSeries = xyChart
-        .addPointLineAreaSeries({ axisY, dataPattern: 'ProgressiveX' })
-        .setMaxSampleCount(10_000)
-        .setAreaFillStyle(emptyFill)
+    const lineSeries = xyChart.addLineSeries({ axisY }).setMaxSampleCount(10_000)
     lineSeriesArray.push(lineSeries)
 
     const gaugeContainer = document.createElement('div')
@@ -104,7 +102,7 @@ setInterval(() => {
         const prev = prevValues[iCh]
         const currentValue = Math.max(Math.min(prev + 5 * (Math.random() * 2 - 1), 100), 0)
         prevValues[iCh] = currentValue
-        lineSeriesArray[iCh].add({ x: currentTime, y: currentValue })
+        lineSeriesArray[iCh].appendJSON({ x: currentTime, y: currentValue })
         gaugeChartArray[iCh].setValue(currentValue)
     }
 }, 1000 / 60)
